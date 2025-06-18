@@ -1,0 +1,39 @@
+2025-06-18 17:20:57,607 - INFO - Starting Improved ML Pipeline Demo
+2025-06-18 17:20:57,612 - INFO - Data validation passed. Shape: (1000, 5)
+2025-06-18 17:20:57,612 - INFO - Generated 1000 samples for model type A
+2025-06-18 17:20:57,616 - WARNING - Column 'current_draw' contains 7 potential outliers
+2025-06-18 17:20:57,616 - INFO - Data validation passed. Shape: (500, 5)
+2025-06-18 17:20:57,616 - INFO - Generated 500 samples for model type B
+2025-06-18 17:20:57,618 - INFO - Starting model training and hyperparameter tuning...
+2025-06-18 17:20:57,618 - INFO - Training GradientBoosting...
+2025-06-18 17:21:00,766 - INFO - GradientBoosting - Best CV Score: -0.4078
+2025-06-18 17:21:00,766 - INFO - GradientBoosting - Best Params: {'model__learning_rate': 0.1, 'model__max_depth': 5, 'model__n_estimators': 100}
+2025-06-18 17:21:00,766 - INFO - Training RandomForest...
+2025-06-18 17:21:02,399 - INFO - RandomForest - Best CV Score: -0.5361
+2025-06-18 17:21:02,400 - INFO - RandomForest - Best Params: {'model__max_depth': None, 'model__n_estimators': 100}
+2025-06-18 17:21:02,400 - INFO - Best model: GradientBoosting with CV score: -0.4078
+2025-06-18 17:21:02,401 - INFO - 
+==================================================
+2025-06-18 17:21:02,401 - INFO - EVALUATION ON MODEL A TEST SET
+2025-06-18 17:21:02,401 - INFO - ==================================================
+2025-06-18 17:21:02,404 - INFO - Evaluation results for GradientBoosting:
+2025-06-18 17:21:02,404 - INFO -   MSE: 0.5318
+2025-06-18 17:21:02,404 - INFO -   RMSE: 0.7292
+2025-06-18 17:21:02,404 - INFO -   MAE: 0.5155
+2025-06-18 17:21:02,404 - INFO -   R2: 0.9994
+2025-06-18 17:21:02,404 - INFO -   MAPE: 5.7132
+2025-06-18 17:21:02,404 - INFO - 
+==================================================
+2025-06-18 17:21:02,404 - INFO - EVALUATION ON MODEL B TEST SET
+2025-06-18 17:21:02,404 - INFO - ==================================================
+2025-06-18 17:21:02,408 - INFO - Evaluation results for GradientBoosting:
+2025-06-18 17:21:02,408 - INFO -   MSE: 2.4958
+2025-06-18 17:21:02,408 - INFO -   RMSE: 1.5798
+2025-06-18 17:21:02,408 - INFO -   MAE: 1.2390
+2025-06-18 17:21:02,408 - INFO -   R2: 0.9970
+2025-06-18 17:21:02,408 - INFO -   MAPE: 47.0740
+2025-06-18 17:21:02,408 - INFO - 
+Performance Degradation (Model A → Model B):
+2025-06-18 17:21:02,408 - INFO - RMSE Degradation: 116.6%
+2025-06-18 17:21:02,412 - INFO - Model saved to models_improved/best_model.joblib
+2025-06-18 17:21:02,412 - INFO - Demo completed successfully!
